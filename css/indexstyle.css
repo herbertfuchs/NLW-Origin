@@ -1,0 +1,172 @@
+/*================== RESET ==================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/*================== VARIABLES ==================*/
+:root{
+    --header-height: 4.5rem;
+    /* colors */
+  --hue: 159;
+    /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+}
+
+
+/*================== BASE ==================*/
+body{
+    font: 400 1rem "Dm Sans", sans-serif;
+    color: var(--text-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased; /* esse comando aplica uma espécie de ANTI-ALIASING nas fontes, deixando elas mais "finas" ou "refinadas"... Com um contorno mais limpo */
+}
+
+h1{
+    font: 700 1.875rem "Poppins", sans-serif;
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+.button{
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+    height: 3.6rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    font: 500 1rem "Dm Sans", sans-serif;
+    transition: background 0.2s;
+}
+
+.button:hover{
+    background-color: var(--base-color-alt);
+}
+
+.divider-1{
+    height: 1px;
+    background: linear-gradient(
+    270deg,
+    hsla(var(--hue),36%, 57%,1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    );
+}
+
+/*================== LAYOUT ==================*/
+
+.container{
+/*  margin: 0 auto 0 auto; // Aqui temos um espaçamento automático quando a largura do container estava em 90% (acertamos por coincidência)... Deixando a largura no seu tamanho total (100%), podemos observar as margens sendo posicionadas manualmente, e com as medidas dadas pelo FIGMA do projeto. */
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid{
+    display: grid; /* vai habilitar outras funcionalides do CSS, uma delas é o GAP */
+    gap:2rem;
+}
+
+.section{
+    padding: 5rem 0; /* Quando nós fazemos um SHORTHAND de apenas dois valores, o primeiro se referencia às medidas TOP e BOTTOM, e o segundo se refere às medidas RIGHT e LEFT */
+}
+
+#header{
+   border-bottom: 1px solid #E4E4E4; /* Coloca uma borda na parte de baixo do HEADER, no caso a linha que tá delimitando o tamanho do header. */
+
+   margin-bottom: 2rem; /* 2rem = 32px */
+   display: flex; /* o conteúdo interno do HEADER se adaptou AO EIXO HORIZONTAL, o MENU começou a aparecer pós comando */
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--body-color);
+
+   /* background-color: red; */
+}
+
+nav{
+    height: var(--header-height); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo{
+    font: 700 1.312rem "Poppins", sans-serif;
+    color: var(--title-color);
+}
+
+.logo span{
+    color: var(--base-color);
+}
+
+main{
+    margin-top: var(--header-height);
+}
+
+/*================== HOME ==================*/
+#home{
+    overflow: hidden;
+}
+
+#home .container{
+    margin: 0;
+}
+
+#home .image{
+    position: relative;
+}
+
+#home .image::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -16.8%;
+    left: 16.7%;
+    z-index: 0; /* Mexe na PROFUNDIDADE, por exemplo: x horizontal, y vertical e Z profundidade */
+}
+
+#home .image img{
+    position: relative;
+    right: 2.93rem;
+}
+
+#home .image img,
+#home .image::before{
+    border-radius: 0.25rem;
+}
+
+#home .text{ /* RETORNA O ESPAÇAMENTO DOS TEXTOS NA HOME */
+    margin-left: 1.5rem; 
+    margin-right: 1.5rem;
+    text-align: center;
+}
+
+#home .text h1{
+    margin-bottom: 1rem;
+}
+
+#home .text p{
+    margin-bottom: 2rem;
+}
