@@ -144,15 +144,21 @@ nav ul li a:hover{
     color: var(--base-color);
 }
 
-nav ul li a:hover::after{
+nav ul li a::after{
     content:"";
-    width: 100%;
+    width: 0%;
     height: 2px;
     background: var(--base-color);
 
     position: absolute;
     left: 0;
     bottom: -1.5rem;
+
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
 }
 
 nav .menu{
