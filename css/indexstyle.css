@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+ul{
+    list-style: none;
+}
+
 a{
     text-decoration: none;
 }
@@ -38,7 +42,7 @@ body{
     -webkit-font-smoothing: antialiased; /* esse comando aplica uma espécie de ANTI-ALIASING nas fontes, deixando elas mais "finas" ou "refinadas"... Com um contorno mais limpo */
 }
 
-h1{
+.title{
     font: 700 1.875rem "Poppins", sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
@@ -102,13 +106,11 @@ h1{
    /* background-color: red; */
 }
 
-nav{
-    height: var(--header-height); 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+main{
+    margin-top: calc(var(--header-height) + 2rem); /* CALC é uma FUNÇÃO para efetuar "continhas" no CSS, no caso usamos para calcular a altura do header que padronizamos MAIS 2rem. calc funciona da seguinte maneira calc() */
 }
+
+/*================== LOGO ==================*/
 
 .logo{
     font: 700 1.312rem "Poppins", sans-serif;
@@ -119,9 +121,71 @@ nav{
     color: var(--base-color);
 }
 
-main{
-    margin-top: var(--header-height);
+/*================== NAVIGATION ==================*/
+
+nav{
+    height: var(--header-height); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
+
+nav ul li{
+    text-align: center;
+}
+
+nav ul li a{
+    transition: color 0.4s;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--base-color);
+}
+
+nav ul li a:hover::after{
+    content:"";
+    width: 100%;
+    height: 2px;
+    background: var(--base-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden; /* tirou a visibilidade das opções no menu junto com as "interações" via mouse */
+}
+
+/* ----- MOSTRAR MENU ----- */
+
+/* O "nav" RECEBE A CLASSE "show", ele não está procurando uma classe "show" dentro do "nav" */
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+
+    background: var(--body-color);
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav.show .menu{
+    display: grid;
+    place-content: center;
+}
+
+nav.show ul.grid{
+    gap: 4rem;
+}
+
 
 /*================== HOME ==================*/
 #home{
