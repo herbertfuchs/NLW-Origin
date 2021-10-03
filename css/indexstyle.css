@@ -73,6 +73,15 @@ body{
     );
 }
 
+.divider-2{ /* CRIA UM NOVO DIVIDER COM O GRADIENT "INVERSO" */
+    height: 1px;
+    background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue),36%, 57%,1)
+    );
+}
+
 /*================== LAYOUT ==================*/
 
 .container{
@@ -88,6 +97,10 @@ body{
 
 .section{
     padding: 5rem 0; /* Quando nós fazemos um SHORTHAND de apenas dois valores, o primeiro se referencia às medidas TOP e BOTTOM, e o segundo se refere às medidas RIGHT e LEFT */
+}
+
+.section .title{
+    margin-bottom: 1rem;
 }
 
 #header{
@@ -265,6 +278,10 @@ nav.show  div.icon-close{
 }
 
 /*================== SOBRE ==================*/
+
+#about{
+    background: white;
+}
 
 #about .container{
     margin: 0;
