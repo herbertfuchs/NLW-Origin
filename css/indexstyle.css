@@ -35,6 +35,11 @@ img{
 
 
 /*================== BASE ==================*/
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font: 400 1rem "Dm Sans", sans-serif;
     color: var(--text-color);
@@ -127,6 +132,10 @@ body{
    /* background-color: red; */
 }
 
+#header.scroll{
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
 main{
     margin-top: calc(var(--header-height) + 2rem); /* CALC é uma FUNÇÃO para efetuar "continhas" no CSS, no caso usamos para calcular a altura do header que padronizamos MAIS 2rem. calc funciona da seguinte maneira calc() */
 }
@@ -182,9 +191,15 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
+nav .menu ul{
+    display: none;
+}
+
 nav .menu{
     opacity: 0;
     visibility: hidden; /* tirou a visibilidade das opções no menu junto com as "interações" via mouse */
+    top: -20rem;
+    transition: 0.3s;
 }
 
 /* ----- MOSTRAR MENU ----- */
@@ -202,11 +217,13 @@ nav.show .menu{
     position: fixed;
     top: 0;
     left: 0;
-}
 
-nav.show .menu{
     display: grid;
     place-content: center;
+}
+
+nav.show .menu ul{
+    display: grid;
 }
 
 nav.show ul.grid{
@@ -226,14 +243,16 @@ nav .icon-close{
     opacity: 0;
 
     position: absolute;
+    top: -1.5rem;
     right: 1.5rem;
 
-    /* TRANSIÇÃO DOS MENU ICON */
+    transition: 0.2s;
 }
 
 nav.show  div.icon-close{
     visibility: visible;
     opacity: 1;
+    top: 1.5rem;
 }
 
 
@@ -336,4 +355,16 @@ nav.show  div.icon-close{
     border-bottom: .25rem solid var(--base-color);
     border-radius: .25rem .25rem 0 0;
     text-align: center;
+}
+
+.card i{
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: var(--base-color);
+}
+
+.card .title{
+    font-size: 1.5rem;
+    margin-bottom: 0.75;
 }
