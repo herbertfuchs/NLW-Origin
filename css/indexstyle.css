@@ -323,3 +323,13 @@ nav.show  div.icon-close{
     margin-left: 1.5rem; 
     margin-right: 1.5rem;
 }
+
+/*================== SERVICES ==================*/
+
+.cards.grid{
+    gap: 1.5rem;
+}
+
+.card{
+    padding: 3.625rem 2rem;
+}
