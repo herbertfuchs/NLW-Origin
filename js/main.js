@@ -33,3 +33,5 @@ window.addEventListener('scroll', function(){
         header.classList.remove('scroll')
     }
 })
+
+/* TESTIMONIALS CAROUSEL */
