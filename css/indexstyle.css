@@ -431,3 +431,31 @@ nav.show  div.icon-close{
 .swiper-pagination-bullet-active{ /* Quando a BOLINHA estiver ativa ela terá a nossa -base-color, por padrão ela vem com um azul mas não bateria com a paleta do website */
     background: var(--base-color);
 }
+
+/*================== CONTACT ==================*/
+
+#contact .grid{
+    gap: 4rem; /* o GAP aplica valores de espaço para as linhas e colunas de uma vez só, eixo X e eixo Y */
+}
+
+#contact .text p{
+    margin-bottom: 2rem;
+}
+
+#contact .button i, #contact ul li i{
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+}
+
+#contact ul.grid{
+    gap: 2rem;
+}
+
+#contact ul li{
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li i{
+    color: var(--base-color);
+}
