@@ -103,6 +103,14 @@ body{
     margin-bottom: 1rem;
 }
 
+.section header{
+    margin-bottom: 4rem;
+}
+
+.section header strong{
+    color: var(--base-color);
+}
+
 #header{
    border-bottom: 1px solid #E4E4E4; /* Coloca uma borda na parte de baixo do HEADER, no caso a linha que tá delimitando o tamanho do header. */
 
