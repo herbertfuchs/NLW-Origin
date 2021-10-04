@@ -44,3 +44,20 @@ const swiper = new Swiper('.swiper', {
     mousewheel: true,
     keyboard: true,
   });
+
+/* SCROLL REVEAL API, para revelar elementos esmaecendo ao rolar a página */
+
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 500,
+    reset: true
+})
+
+scrollReveal.reveal( /* SELECIONANDO O QUE TERÁ A ANIMAÇÃO */
+    `#home .text, #home .image, 
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonials header, #testimonials .testimonials,
+    #contact .text, #contact .links`
+    ,{ interval: 100 })
