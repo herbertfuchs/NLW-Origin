@@ -485,3 +485,20 @@ footer .social i{
     font-size: 1.5rem;
     margin-right: 1.5rem;
 }
+
+/* == BACK TO THE TOP = */
+
+.back-to-top{
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+
+    padding: 0.5rem;
+    clip-path: circle();
+
+    font-size: 1.5rem;
+    line-height: 0;
+}
