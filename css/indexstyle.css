@@ -486,6 +486,16 @@ footer .social i{
     margin-right: 1.5rem;
 }
 
+/* animação de subir os "sociais" */
+footer .social a{
+    display: inline-block;
+    transition: 0.3s;
+}
+
+footer .social a:hover{
+    transform: translateY(-11px);
+}
+
 /* == BACK TO THE TOP = */
 
 .back-to-top{
@@ -514,3 +524,17 @@ footer .social i{
     opacity: 1;
     transform: translateY(0);
 }
+
+/* responsividade */
+
+/* ======= MEDIA QUERIES ======= */ 
+/* at rule, regra de arroba */
+/* aparelhos muito grandes: 1200 > */
+/* aparelhos grandes: 1023 > */
+/* aparelhos grandes: 992 > */
+@media (min-width: 992px) {
+    .title{
+        font-size: 2.25rem;
+    }
+}
+/* aparelhos médios (tablets): 767 > */

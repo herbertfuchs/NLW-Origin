@@ -59,7 +59,8 @@ scrollReveal.reveal( /* SELECIONANDO O QUE TERÁ A ANIMAÇÃO */
     #about .image, #about .text,
     #services header, #services .card,
     #testimonials header, #testimonials .testimonials,
-    #contact .text, #contact .links`
+    #contact .text, #contact .links,
+    footer .brand, footer .social`
     ,{ interval: 100 })
 
 /* ARROW BACK TO TOP */
