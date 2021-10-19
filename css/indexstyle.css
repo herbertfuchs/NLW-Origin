@@ -31,6 +31,13 @@ img{
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+    /* fonts */
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
 }
 
 
@@ -41,14 +48,14 @@ html{
 }
 
 body{
-    font: 400 1rem "Dm Sans", sans-serif;
+    font: 400 1rem var(--body-font);
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased; /* esse comando aplica uma espécie de ANTI-ALIASING nas fontes, deixando elas mais "finas" ou "refinadas"... Com um contorno mais limpo */
 }
 
 .title{
-    font: 700 1.875rem "Poppins", sans-serif;
+    font: 700 var(--title-font-size) var(--title-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -61,7 +68,7 @@ body{
     align-items: center;
     padding: 0 2rem;
     border-radius: 0.25rem;
-    font: 500 1rem "Dm Sans", sans-serif;
+    font: 500 1rem var(--body-font);
     transition: background 0.2s;
 }
 
@@ -101,11 +108,15 @@ body{
 }
 
 .section{
-    padding: 5rem 0; /* Quando nós fazemos um SHORTHAND de apenas dois valores, o primeiro se referencia às medidas TOP e BOTTOM, e o segundo se refere às medidas RIGHT e LEFT */
+    padding: calc(5rem + var(--header-height)) 0; /* Quando nós fazemos um SHORTHAND de apenas dois valores, o primeiro se referencia às medidas TOP e BOTTOM, e o segundo se refere às medidas RIGHT e LEFT */
 }
 
 .section .title{
     margin-bottom: 1rem;
+}
+
+.section .subtitle{
+    font-size: var(--subtitle-font-size);
 }
 
 .section header{
@@ -136,14 +147,10 @@ body{
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
-main{
-    margin-top: calc(var(--header-height) + 2rem); /* CALC é uma FUNÇÃO para efetuar "continhas" no CSS, no caso usamos para calcular a altura do header que padronizamos MAIS 2rem. calc funciona da seguinte maneira calc() */
-}
-
 /*================== LOGO ==================*/
 
 .logo{
-    font: 700 1.312rem "Poppins", sans-serif;
+    font: 700 1.312rem var(--title-font);
     color: var(--title-color);
 }
 
@@ -470,6 +477,10 @@ footer{
     background: var(--base-color);
 }
 
+footer.section{
+    padding: 4rem 0;
+}
+
 footer .logo{
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -483,7 +494,11 @@ footer .brand p{
 footer .social i{
     color: var(--text-color-light);
     font-size: 1.5rem;
-    margin-right: 1.5rem;
+}
+
+footer .social{
+    grid-auto-flow: column;
+    width: fit-content;
 }
 
 /* animação de subir os "sociais" */
@@ -529,12 +544,82 @@ footer .social a:hover{
 
 /* ======= MEDIA QUERIES ======= */ 
 /* at rule, regra de arroba */
+
 /* aparelhos muito grandes: 1200 > */
+@media (min-width: 1200px){
+    /* REUSABLE CLASSES */
+    .container{
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section{
+        padding: 10rem 0;
+    }
+
+    .button{
+        height: 3.25rem;
+    }
+
+    /* NAVIGATION */
+    nav .menu{
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul{
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu ul li a.title{
+        font: 400 1rem var(--body-font);
+    }
+
+    nav .icon-menu{
+        display: none;
+    }
+
+    /* LAYOUT */
+
+    main{
+        margin-top: var(--header-height);
+    }
+
+    /* HOME */
+
+    #home .container{
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    #home .image{
+        order: 1;
+    }
+
+    #home .text{
+        order: 0; 
+        max-width: 24rem;
+        text-align: left; 
+    }
+
+    /* ABOUT */
+
+    #about .container{
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+  
+}
 /* aparelhos grandes: 1023 > */
 /* aparelhos grandes: 992 > */
 @media (min-width: 992px) {
-    .title{
-        font-size: 2.25rem;
+    :root{
+      --title-font-size: 2.25rem;
+      --subtitle-font-size: 1.125rem;
     }
 }
 /* aparelhos médios (tablets): 767 > */
