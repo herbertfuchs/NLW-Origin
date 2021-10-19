@@ -81,3 +81,35 @@ const backToTopButton = document.querySelector('.back-to-top')
             backToTopButton.classList.remove('show')
         }
     });
+
+
+
+/* Setting the animation on nav options ON while in determinated section */
+
+const sections = document.querySelectorAll('main section[id]') // Seleciona todas as seções que tiverem um ID dentro
+
+function activateMenuAtCurrentSection(){
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+    for( const section of sections ){
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute('id')
+        // TESTE pra ver se estava pegando: console.log(sectionId)
+
+        const checkpointStart = checkpoint >= sectionTop
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+        if(checkpointStart && checkpointEnd){
+            document.querySelector('nav ul li a[href*=' + sectionId + ']')
+            .classList.add('active')
+        } else{
+            document.querySelector('nav ul li a[href*=' + sectionId + ']')
+            .classList.remove('active')
+        }
+    }
+}
+
+window.addEventListener('scroll', function () {
+    activateMenuAtCurrentSection()
+});
