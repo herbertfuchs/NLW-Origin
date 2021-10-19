@@ -16,6 +16,7 @@ a{
 img{
     width: 100%;
     height: auto;
+    user-select: none;
 }
 
 /*================== VARIABLES ==================*/
@@ -635,6 +636,32 @@ footer .social a:hover{
       margin-left: auto;
       margin-right: auto;
   }
+
+  /* CONTACT */
+  #contact .container{
+      grid-auto-flow: column;
+      align-items: center;
+  }
+
+  #contact .text{
+      max-width: 25rem;
+  }
+
+  /* FOOTER */
+  footer.section{
+      padding: 3.75rem 0;
+  }
+
+  footer .container{
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: space-between
+  }
+
+  footer .logo{
+      font-size: 2.25rem;
+  }
+
 }
 /* aparelhos grandes: 1023 > */
 /* aparelhos grandes: 992 > */
